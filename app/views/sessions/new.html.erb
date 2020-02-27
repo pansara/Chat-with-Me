@@ -8,28 +8,28 @@
 <div class="container login-container">
             <div class="row">
                 <div class="col-md-6 login-form-1">
-                    <form>
-                        <label><strong>Username:</strong></label>
+                    <%= form_for(:session, html: {role: "form"}, url: login_path) do |f| %>
+                        <%= f.label :username, "Username:", style: "font-weight: bold;" %>
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fa fa-user"></i></span>
                             </div>
-                            <input type="text" class="form-control" placeholder="Username">
+                            <%= f.text_field :username, placeholder: "Username", class: "form-control" %>
                         </div>
-                        <label><strong>Password:</strong></label>
+                        <%= f.label :password, "Password:", style: "font-weight: bold;" %>
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fa fa-lock"></i></span>
                             </div>
-                            <input type="password" class="form-control" placeholder="Password">
+                            <%= f.password_field :password, placeholder: "Password", class: "form-control" %>
 					    </div>
                         <div class="form-group">
-                            <input type="submit" class="btnSubmit" value="Login" />
+                            <%= f.button "Login", class: "btnSubmit" %>
                         </div>
                         <!-- <div class="form-group">
                             <a href="#" class="ForgetPwd">Forget Password?</a>
                         </div> -->
-                    </form>
+                    <% end %>
                 </div>
                 <div class="col-md-6 login-form-2">
                     <form>
