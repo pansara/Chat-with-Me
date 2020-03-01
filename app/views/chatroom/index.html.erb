@@ -19,7 +19,7 @@
     <div class="col-md-12">
 
       <!-- Newsfeed -->
-      <div class="mdb-feed">
+      <div class="mdb-feed" id="message-container">
         <%= render @messages %> 
       </div>
       <!-- Newsfeed -->
@@ -37,7 +37,7 @@
 
 </div>
 <div class="card card-footer">
-  <%= form_for(@message, html: {role: "form"}, url: message_path) do |f| %>
+  <%= form_for(@message, html: {role: "form"}, url: message_path, remote: true) do |f| %>
     <div class="input-group mb-3">
       <%= f.text_field :body, class: "form-control", placeholder: "Enter a message..." %>
       <div class="input-group-prepend">
